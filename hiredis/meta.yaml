@@ -1,0 +1,26 @@
+package:
+  name: hiredis
+  version: !!str 0.2.0
+
+source:
+  fn: hiredis-0.2.0.tar.gz
+  url: https://pypi.python.org/packages/source/h/hiredis/hiredis-0.2.0.tar.gz
+  md5: b410cf2f2062d87ab841c33d8345761e
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+
+  run:
+    - python
+
+test:
+  imports:
+    - hiredis
+
+about:
+  home: https://github.com/redis/hiredis-py
+  license: BSD
