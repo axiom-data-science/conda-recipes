@@ -20,4 +20,4 @@ test:
 about:
     home: https://github.com/celery/django-celery
     license: New BSD License
-    summary: 'An ocean data toolkit developed and used by Axiom Data Science'
+    summary: 'Celery Integration for Django'
