@@ -6,11 +6,10 @@ source:
   fn: django-nested-inline-0.3.5.tar.gz
   url: https://pypi.python.org/packages/source/d/django-nested-inline/django-nested-inline-0.3.5.tar.gz
   md5: e59b87c90a0eebcccf902ae243121578
-#  patches:
-   # List any patch files here
-   # - fix.patch
+  patches:
+    - zipsafe.patch
 
-# build:
+build:
   # noarch_python: True
   # preserve_egg_dir: True
   # entry_points:
@@ -24,7 +23,7 @@ source:
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  # number: 1
+  number: 7
 
 requirements:
   build:
