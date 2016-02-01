@@ -1,11 +1,11 @@
 package:
   name: amqp
-  version: "1.4.6"
+  version: "1.4.9"
 
 source:
-  fn: amqp-1.4.6.tar.gz
-  url: https://pypi.python.org/packages/source/a/amqp/amqp-1.4.6.tar.gz
-  md5: a061581b6864f838bffd62b6a3d0fb9f
+  fn: amqp-1.4.9.tar.gz
+  url: https://pypi.python.org/packages/source/a/amqp/amqp-1.4.9.tar.gz
+  md5: df57dde763ba2dea25b3fa92dfe43c19
 #  patches:
    # List any patch files here
    # - fix.patch
