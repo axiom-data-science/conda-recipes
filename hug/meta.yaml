@@ -1,0 +1,67 @@
+package:
+  name: hug
+  version: "1.9.9"
+
+source:
+  fn: hug-1.9.9.tar.gz
+  url: https://pypi.python.org/packages/source/h/hug/hug-1.9.9.tar.gz
+  md5: 566979b32f3204cbda64c18b1bc02c50
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - hug = hug:main
+    #
+    # Would create an entry point called hug that calls hug.main()
+
+    - hug = hug.run:terminal
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - falcon
+
+  run:
+    - python
+    - falcon
+
+test:
+  # Python imports
+  imports:
+    - hug
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+    - hug --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - mock
+    - pytest
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/timothycrosley/hug
+  license: MIT License
+  summary: 'A Python framework that makes developing APIs as simple as possible, but no simpler.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

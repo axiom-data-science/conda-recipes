@@ -1,0 +1,77 @@
+package:
+  name: falcon
+  version: "0.3.0"
+
+source:
+  fn: falcon-0.3.0.tar.gz
+  url: https://pypi.python.org/packages/source/f/falcon/falcon-0.3.0.tar.gz
+  md5: 0eff2157c7e3ee298188934da6fef967
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - falcon = falcon:main
+    #
+    # Would create an entry point called falcon that calls falcon.main()
+
+    - falcon-bench = falcon.cmd.bench:main
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - six >=1.4.0
+    - python-mimeparse
+
+  run:
+    - python
+    - six >=1.4.0
+    - python-mimeparse
+
+test:
+  # Python imports
+  imports:
+    - falcon
+    - falcon.bench
+    - falcon.bench.nuts
+    - falcon.bench.nuts.nuts
+    - falcon.bench.nuts.nuts.controllers
+    - falcon.bench.nuts.nuts.model
+    - falcon.bench.nuts.nuts.tests
+    - falcon.bench.queues
+    - falcon.cmd
+    - falcon.routing
+    - falcon.testing
+    - falcon.util
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+    - falcon-bench --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - pecan
+
+about:
+  home: http://falconframework.org
+  license: Apache Software License
+  summary: 'An unladen web framework for building APIs and app backends.'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
